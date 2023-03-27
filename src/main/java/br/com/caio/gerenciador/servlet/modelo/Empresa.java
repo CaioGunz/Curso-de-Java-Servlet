@@ -1,4 +1,4 @@
-package br.com.caio.gerenciador.servlet;
+package br.com.caio.gerenciador.servlet.modelo;
 
 import java.util.Date;
 
