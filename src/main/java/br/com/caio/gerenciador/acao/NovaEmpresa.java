@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caio.gerenciador.servlet.modelo.Banco;
 import br.com.caio.gerenciador.servlet.modelo.Empresa;
 
-public class NovaEmpresa {
+public class NovaEmpresa implements Acao {
 
-	public void excuta(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nome");
@@ -38,8 +38,8 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNome());
 		
-		response.sendRedirect("entrada?acao=ListaEmpresa");
-		
+		return "redirect:entrada?acao=ListaEmpresa";
 	}
+
 	
 }

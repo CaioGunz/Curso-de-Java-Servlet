@@ -16,14 +16,14 @@
 		Empresa ${ empresa } cadastrada com sucesso!
 	</c:if>
 	
-	Lista de empresas: 
+	Lista de empresas: <br/>
 	
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			
 			<li>${empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </li>
-			<a href="/gerenciador/entrada?acao=MostrarEmpresa&id=${empresa.id}">editar</a>
+			<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">editar</a>
 			<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">remove</a>
+			<a href="/gerenciador/entrada?acao=NovaEmpresaForm&id=${empresa.id}">Cadastrar Empresa(Provisório)</a>
 		</c:forEach>
 	</ul>
 	
